@@ -1,0 +1,50 @@
+<template>
+  <div class="hello">
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col">
+          <h2>Markdown Previewer</h2>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="offset-1 col-5">
+          <h3>Markdown</h3>
+          <textarea id="markdown" class="info" v-model="markdown"></textarea>
+        </div>
+        <div class="col-5">
+          <h3>Preview</h3>
+          <div id="preview" class="info" v-markdown :key="markdown">{{markdown}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      markdown: "######Hello World"
+    };
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.container {
+  color: #fff;
+}
+.info {
+  resize: none;
+  width: 100%;
+  height: 300px;
+  background: #333333;
+  color: #fff;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 0.5px solid #34495E;
+}
+</style>
